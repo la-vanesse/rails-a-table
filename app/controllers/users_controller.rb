@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   # only the user can delete his account. if statement is a MUST
   def destroy
     @user.destroy
-    redirect_to users_path
+    redirect_to home_path
   end
 
   private
