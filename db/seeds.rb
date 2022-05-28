@@ -19,7 +19,7 @@ product_1 = Product.create!(
   user: "Alphonse",
   rating: 2,
   quantity: 48,
-  unit_price: 10)
+  price: 10)
 
 product_2 = Product.create!(
   name: "Azalea",
@@ -29,7 +29,7 @@ product_2 = Product.create!(
   user: "Gerald",
   rating: 5,
   quantity: 24,
-  unit_price: 15)
+  price: 15)
 
 product_3 = Product.create!(
   name: "Venetto",
@@ -39,7 +39,7 @@ product_3 = Product.create!(
   user: "Alphonse",
   rating: 4,
   quantity: 48,
-  unit_price: 12)
+  price: 12)
 
 product_4 = Product.create!(
   name: "Farfetch",
@@ -49,7 +49,7 @@ product_4 = Product.create!(
   user: "Jack32",
   rating: 1,
   quantity: 12,
-  unit_price: 14)
+  price: 14)
 
 product_5 = Product.create!(
   name: "Franky",
@@ -59,7 +59,7 @@ product_5 = Product.create!(
   user: "Alphonse",
   rating: 2,
   quantity: 24,
-  unit_price: 50)
+  price: 50)
 
 product_6 = Product.create!(
   name: "Ikeha",
@@ -69,7 +69,7 @@ product_6 = Product.create!(
   user: "Jessica",
   rating: 3,
   quantity: 12,
-  unit_price: 11)
+  price: 11)
 
 product_7 = Product.create!(
   name: "Wahoo",
@@ -79,7 +79,7 @@ product_7 = Product.create!(
   user: "Jojo",
   rating: 5,
   quantity: 24,
-  unit_price: 55)
+  price: 55)
 
 product_8 = Product.create!(
   name: "Donald",
@@ -89,7 +89,7 @@ product_8 = Product.create!(
   user: "Anick",
   rating: 5,
   quantity: 24,
-  unit_price: 45)
+  price: 45)
 
 puts "created #{product.count} products"
 puts "done"
