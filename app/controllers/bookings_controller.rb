@@ -11,13 +11,13 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     Booking.product = @product
     Booking.user = current_user
-    Booking.start_date = @booking.start_date.to_date
-    Booking.end_date = @booking.end_date.to_date
+    Booking.start_date = @booking.start_date.to_date # To confirm code formatting and syntax
+    Booking.end_date = @booking.end_date.to_date # To confirm code formatting and syntax
 
     if @booking.save
-      redirect_to home_path, notice: 'Booking was successfully created.'
+      redirect_to home_path, notice: "Booking was created for #{@product.name}."
     else
-      render :new, notice: 'Booking was not created. Please fill fields with valid information.'
+      render :new, notice: 'Booking Rejected. Please fill fields with valid information.'
     end
   end
 

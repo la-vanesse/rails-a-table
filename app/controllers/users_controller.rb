@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-
-# for admin (super-user) only
+  # for admin (super-user) only
   def index
     @users = User.all
   end

@@ -5,13 +5,14 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  # create new product
   def new
     @product = Product.new
   end
 
   def create
     @product = Product.new(product_params)
-    @product.user = current_user
+    @product.user = current_user # define owner of the product
     if @product.save
       redirect_to @product
     else
@@ -19,8 +20,10 @@ class ProductsController < ApplicationController
     end
   end
 
+  # show product details
   def show; end
 
+  # edit product details
   def edit; end
 
   def update
