@@ -1,12 +1,82 @@
-.navbar-lewagon {
-  justify-content: space-between;
+
+
+.home-logo {
+  width: 120px;
+  height: auto;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.home-logo:hover path {
+  fill: #3d3a07;
+}
+
+.container {
+  width: 80%;
+}
+
+.navbar {
   background: #574F52;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+header::after {
+  content: '';
+  display: table;
+  clear: both;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+nav {
+  float: right;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  padding-top: 8px;
+
+  position: relative;
+}
+
+
+nav ul > li > a {
+  color: #D6D5C1;
+  text-decoration: none;
+}
+
+nav ul > li > a:hover {
+  color: #D6D5C1;
+}
+
+
+nav ul > li > a::before {
+content: '';
+display: block;
+height: 1px;
+background-color: #D6D5C1;
+
+position: absolute;
+bottom: 0;
+width: 0%;
+transition: all ease-in-out 100ms;
+}
+
+nav ul > li > a:hover::before {
+width: 100%;
+}
+
+
+.sign-in {
+  color: #D6D5C1;
+  float: right;
+  margin-right: 50px;
+  text-decoration: none;
+}
+
+.sign-in:hover{
+  color: white;
 }
