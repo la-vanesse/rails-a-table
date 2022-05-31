@@ -37,7 +37,7 @@ product_1 = Product.create!(
   description: "Steel cutlery with floral decorations",
   event_type: "Birthday",
   product_type: "Cutlery",
-  user_id: "3",
+  user_id: 3,
   price: 10,
   quantity: 48,
   is_booked: false
@@ -50,7 +50,7 @@ product_2 = Product.create!(
   description: "Spice up the image of your dining table by opting for the gold-rimmed Verde dinner set. The vibrant jewel tones of gold and emerald green will make your meal presentation more exciting.",
   event_type: "Party",
   product_type: "Plate",
-  user_id: "2",
+  user_id: 2,
   price: 15,
   quantity: 24,
   is_booked: true
@@ -63,7 +63,7 @@ product_3 = Product.create!(
   description: "Steel cutlery with floral decorations",
   event_type: "wedding",
   product_type: "Glasses",
-  user_id: "3",
+  user_id: 3,
   price: 12,
   quantity: 48,
   is_booked: false
@@ -76,7 +76,7 @@ product_4 = Product.create!(
   description: "White, grey and blue Orquestra dinner plate from Vista Alegre featuring a geometric pattern, a round shape and a shallow design.",
   event_type: "Birthday",
   product_type: "Plate",
-  user_id: "1",
+  user_id: 1,
   price: 14,
   quantity: 12,
   is_booked: false

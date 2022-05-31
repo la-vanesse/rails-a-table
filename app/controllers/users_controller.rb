@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-
-# for admin (super-user) only
+  before_action :set_user, only: %i[show edit update destroy]
+  # for admin (super-user) only
   def index
     @users = User.all
   end

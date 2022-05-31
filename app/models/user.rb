@@ -10,5 +10,5 @@ class User < ApplicationRecord
 
   # Added validations
   validates :name, presence: true, uniqueness: true
-  validates :email, email: true
+  validates :email, email: true, uniqueness: true
 end
