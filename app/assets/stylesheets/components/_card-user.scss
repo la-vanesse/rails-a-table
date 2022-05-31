@@ -1,0 +1,40 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent !important;
+  border-color: black;
+  height: auto;
+  padding: .25rem;
+  margin: 1rem;
+}
+
+.card-body {
+  h2 {
+    color: #788382 !important;
+    font-size: 2rem;
+    font-weight: normal;
+  }
+  p {
+    color: #788382 !important;
+    font-size: 1rem;
+    font-weight: normal;
+  }
+}
+
+.card-buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card {
+  img {
+    margin: 0.50rem 0.5rem;
+    padding: 0 0.5rem;
+    min-width: 100%;
+    min-height: auto;
+  }
+}
