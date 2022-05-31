@@ -1,8 +1,8 @@
 <div class="row">
     <% @products.each do |product| %>
       <div class="col-md-4">
-  <div class="card-user" style="width: 18rem;">
-    <img src= product.image class="card-img-top" alt="crystal glass">
+  <div class="card" style="width: 18rem;">
+    <img src= "" class="card-img-top" alt="crystal glass"> #to add images source(cloudinary)
   <div class="card-body">
     <h2><%= product.name %></h2>
     <p><%= product.description.truncate_words(10) %></p>
