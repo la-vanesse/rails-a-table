@@ -81,8 +81,19 @@ product_4 = Product.create!(
   quantity: 12,
   is_booked: false
 )
-
 # product_4.photo.attach(io: file, filename: 'geometric dinner set', content_type: 'image/jpg')
 
 puts "created #{Product.count} products"
-puts "done"
+
+40.times do
+  Review.create!(
+    rating: rand(1..5),
+    comment: ["Great Product", "Loved it", "Perfect for small receptions", "Not recommended", "awful", "amazing", "Will reconsider"].sample,
+    user_id: rand(1..3),
+    product_id: rand(1..4)
+  )
+end
+
+puts "> Created #{Review.count} random reviews"
+
+puts "> Done!"
