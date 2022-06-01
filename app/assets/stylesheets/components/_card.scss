@@ -3,30 +3,41 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #f2f3eb;
+  background-color: transparent !important;
   border-color: black;
-
-  .h2 {
-    color: #788382;
-    font-size: 8rem;
-    font-weight: bolder;
-  }
-  .p {
-    color: #788382;
-    font-size: 8rem;
-    font-weight: lighter;
-  }
-}
-
-.card__cover {
-  height: 150px;
-  width: 80%;
+  height: auto;
   padding: .25rem;
+  margin: 1rem;
 }
 
-.card__content {
-  /* Take available height */
-  flex: 1;
+ .card-body {
+  h2 {
+    color: $gray !important;
+    font-size: 2rem;
+    font-weight: normal;
+  }
+  p {
+    color: $gray !important;
+    font-size: 1rem;
+    font-weight: normal;
+  }
+}
+
+
+.card-buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card {
+  img {
+    margin: 0.50rem 0.5rem;
+    padding: 0 0.5rem;
+    min-width: 100%;
+    min-height: auto;
+  }
 }
 
 .card_large {

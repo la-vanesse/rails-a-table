@@ -1,9 +1,19 @@
+<div class="row">
     <% @products.each do |product| %>
-      <div class="co-12 col-sm-6 col-md-4 mb-3">
-        <%= link_to product_path(product), class:"text-decoration-none" do %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= product.photo.attached? ? cl_image_path(product.photo.key) : asset_path('product_background.jpg') %>)">
-            <%= product.name %>
+      <div class="col-md-4">
+  <div class="card" style="width: 18rem;">
+    <img src= "" class="card-img-top" alt="crystal glass"> #to add images source(cloudinary)
+  <div class="card-body">
+    <h2><%= product.name %></h2>
+    <p><%= product.description.truncate_words(10) %></p>
+  </div>
+  <div class="card-buttons">
+    <%= link_to "Update", "edit_user_product_path(product)", class: "btn btn-green" %>
+    <%= link_to "Delete", "user_product(product)",  class: "btn btn-green", method: :delete,
+                data: { confirm: "Are you sure?" },
+                class: 'ms-3 text-danger' %>
           </div>
-        <% end %>
+        </div>
       </div>
     <% end %>
+  </div>
