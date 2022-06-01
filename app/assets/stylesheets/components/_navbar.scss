@@ -12,7 +12,7 @@ position: fixed; top: 0; left: 0; z-index: 9999; width: 100%;
 }
 
 .home-logo:hover path {
-  fill: #3d3a07;
+  fill: $dark-green;
 }
 
 .container {
@@ -20,7 +20,7 @@ position: fixed; top: 0; left: 0; z-index: 9999; width: 100%;
 }
 
 .navbar {
-  background: #574F52;
+  background: $dark-gray;
 }
 
 header::after {
@@ -48,12 +48,12 @@ nav li {
 
 
 nav ul > li > a {
-  color: #D6D5C1;
+  color: $whetstone;
   text-decoration: none;
 }
 
 nav ul > li > a:hover {
-  color: #D6D5C1;
+  color: $whetstone;
 }
 
 
@@ -61,7 +61,7 @@ nav ul > li > a::before {
 content: '';
 display: block;
 height: 1px;
-background-color: #D6D5C1;
+background-color: $whetstone;
 
 position: absolute;
 bottom: 0;
@@ -76,6 +76,9 @@ width: 100%;
 
 .sign-in {
   color: #D6D5C1;
+  color: $whetstone;
+  float: right;
+  margin-right: 50px;
   text-decoration: none;
   margin-right: 50px;
 
