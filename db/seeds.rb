@@ -11,35 +11,44 @@ Product.destroy_all
 User.destroy_all
 puts "Database cleaned"
 
-user_1 = User.create!(
-  name: "Jack32",
-  email: "Jack32@gmail.com",
-  address: "Pamplemousses",
-  phone: "7315558"
-)
+10.times do
+  user = User.create!(
+    name: Faker::Name.unique.name,
+    email: Faker::Internet.email,
+    address: Faker::Address.full_address
+  )
+end
+puts "> created #{User.count} users"
 
-user_2 = User.create!(
-  name: "Gerald",
-  email: "gerald@gmail.com",
-  address: "Chemin Grenier",
-  phone: "7316558"
-)
+# user_1 = User.create!(
+#   name: "Jack32",
+#   email: "Jack32@gmail.com",
+#   address: "Pamplemousses",
+#   phone: "7315558"
+# )
 
-user_3 = User.create!(
-  name: "Alphose",
-  email: "alph@gmail.com",
-  address: "Blue bay",
-  phone: "7316548"
-)
+# user_2 = User.create!(
+#   name: "Gerald",
+#   email: "gerald@gmail.com",
+#   address: "Chemin Grenier",
+#   phone: "7316558"
+# )
+
+# user_3 = User.create!(
+#   name: "Alphose",
+#   email: "alph@gmail.com",
+#   address: "Blue bay",
+#   phone: "7316548"
+# )
 
 product_1 = Product.create!(
   name: "Renaissance",
   description: "Steel cutlery with floral decorations",
   event_type: "Birthday",
   product_type: "Cutlery",
-  user_id: 3,
-  price: 10,
-  quantity: 48,
+  user_id: rand(1..10),
+  price: rand(5..50),
+  quantity: rand(1..100),
   is_booked: false
 )
 
@@ -50,9 +59,9 @@ product_2 = Product.create!(
   description: "Spice up the image of your dining table by opting for the gold-rimmed Verde dinner set. The vibrant jewel tones of gold and emerald green will make your meal presentation more exciting.",
   event_type: "Party",
   product_type: "Plate",
-  user_id: 2,
-  price: 15,
-  quantity: 24,
+  user_id: rand(1..10),
+  price: rand(5..50),
+  quantity: rand(1..100),
   is_booked: true
 )
 
@@ -63,9 +72,9 @@ product_3 = Product.create!(
   description: "Steel cutlery with floral decorations",
   event_type: "wedding",
   product_type: "Glasses",
-  user_id: 3,
-  price: 12,
-  quantity: 48,
+  user_id: rand(1..10),
+  price: rand(5..50),
+  quantity: rand(1..100),
   is_booked: false
 )
 
@@ -76,19 +85,32 @@ product_4 = Product.create!(
   description: "White, grey and blue Orquestra dinner plate from Vista Alegre featuring a geometric pattern, a round shape and a shallow design.",
   event_type: "Birthday",
   product_type: "Plate",
-  user_id: 1,
-  price: 14,
-  quantity: 12,
+  user_id: rand(1..10),
+  price: rand(5..50),
+  quantity: rand(1..100),
   is_booked: false
 )
 # product_4.photo.attach(io: file, filename: 'geometric dinner set', content_type: 'image/jpg')
 
-puts "created #{Product.count} products"
+# 15.times do
+#   Product.create!(
+#     name: Faker::Food.dish,
+#     description: Faker::Food.description,
+#     event_type: Faker::Food.spice,
+#     product_type: Faker::Food.ingredient,
+#     user_id: rand(1..10),
+#     price: rand(5..50),
+#     quantity: rand(1..100),
+#     is_booked: false
+#   )
+# end
+
+puts "> created #{Product.count} products"
 
 40.times do
   Review.create!(
     rating: rand(1..5),
-    comment: ["Great Product", "Loved it", "Perfect for small receptions", "Not recommended", "awful", "amazing", "Will reconsider"].sample,
+    comment: Faker::Lorem.sentence(word_count: (rand(3..10))),
     user_id: rand(1..3),
     product_id: rand(1..4)
   )
