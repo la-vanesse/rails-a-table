@@ -4,10 +4,10 @@
   margin: 8px;
   border-radius: 4px;
   flex: 1 1 auto;
-  background: #bebdae !important;
+  background: $btn-green !important;
   transition: background 0.3s ease;
   &:hover {
-  background: #d5d4ca !important;
+  background: $btn-hover !important;
   color: white !important;
   }
 }

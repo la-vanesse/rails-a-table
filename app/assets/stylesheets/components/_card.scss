@@ -10,18 +10,19 @@
   margin: 1rem;
 }
 
-.card-body {
+ .card-body {
   h2 {
-    color: #788382 !important;
+    color: $gray !important;
     font-size: 2rem;
     font-weight: normal;
   }
   p {
-    color: #788382 !important;
+    color: $gray !important;
     font-size: 1rem;
     font-weight: normal;
   }
 }
+
 
 .card-buttons {
   display: flex;
