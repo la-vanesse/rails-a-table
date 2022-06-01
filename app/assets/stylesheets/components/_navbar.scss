@@ -1,4 +1,8 @@
 
+.navbar {
+position: fixed; top: 0; left: 0; z-index: 9999; width: 100%;
+}
+
 
 .home-logo {
   width: 120px;
@@ -71,12 +75,36 @@ width: 100%;
 
 
 .sign-in {
+  color: #D6D5C1;
   color: $whetstone;
   float: right;
   margin-right: 50px;
   text-decoration: none;
+  margin-right: 50px;
+
 }
 
-.sign-in:hover{
+.sign-in:hover {
   color: white;
+}
+
+.navbar-icon {
+width: auto;
+height: 50px;
+}
+
+.upload-icon {
+  width: auto;
+  height: 60px;
+
+}
+
+.navbar {
+display: flex;
+}
+
+
+.upload-icon:hover {
+filter: invert(0.25);
+
 }

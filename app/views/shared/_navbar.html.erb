@@ -2,15 +2,36 @@
 <div class="navbar">
   <nav>
     <ul>
-      <li><a href="#" class="home-logo"><img src="/assets/atable-logo-white.svg" alt="home"width="120px" height="auto"></a></li>
-      <li><a href="#"><img src="/assets/atable-icon-set.svg" alt="set"width="auto" height="50px"></a></li>
-      <li><a href="#"><img src="/assets/atable-icon-plate.svg" alt="plates"width="auto" height="50px"></a></li>
-      <li><a href="#"><img src="/assets/atable-icon-fork.svg" alt="forks"width="auto" height="50px"></a></li>
-      <li><a href="#"><img src="/assets/atable-icon-glass.svg" alt="glasses"width="auto" height="50px"></a></li>
-      <li><a href="#"><img src="/assets/atable-icon-search.svg" alt="search"width="auto" height="50px"></a></li>
-    </ul>
-  </nav>
-  <a href="#"class="sign-in">sign in</a>
+      <li> <%= link_to root_path do %>
+        <%= image_tag "atable-logo-white.svg", class: "home-logo", alt:"home" %>
+      <% end %>
 
+      <li> <%= link_to root_path do %>
+        <%= image_tag "atable-icon-set.svg", class: "navbar-icon", alt:"set" %>
+      <% end %>
+
+      <li> <%= link_to root_path do %>
+        <%= image_tag "atable-icon-plate.svg", class: "navbar-icon", alt:"plates" %>
+      <% end %>
+
+      <li> <%= link_to root_path do %>
+        <%= image_tag "atable-icon-fork.svg", class: "navbar-icon", alt:"forks" %>
+      <% end %>
+
+      <li>
+      <%= link_to root_path do %>
+        <%= image_tag "atable-icon-glass.svg", class: "navbar-icon", alt:"glasses" %>
+      <% end %>
+      </ul>
+
+  </nav>
+      <div>
+
+      <%= link_to root_path do %>
+        <%= image_tag "atable-icon-upload.svg", class: "upload-icon", alt:"upload" %>
+      <% end %>
+
+      <%= link_to "Sign in", root_path, class: "sign-in" %>
+      </div>
 
 </div>
