@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   before_action :set_product, only: %i[new create]
 
   def index
+    @reviews = Review.all
   end
 
   def new
