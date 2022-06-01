@@ -10,7 +10,4 @@ class PagesController < ApplicationController
   def signin
     @user = User.new
   end
-
-
-
 end
