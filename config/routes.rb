@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get 'signup', to: 'pages#signup', as: :signup
   get 'profile', to: 'pages#profile'
 
-
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :products, only: %i[index show]
   resources :users, only: %i[show create new] do
