@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2022_06_02_132335) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
-    t.string "comment"
+    t.text "comment"
     t.bigint "product_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
