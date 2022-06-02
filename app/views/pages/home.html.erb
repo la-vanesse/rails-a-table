@@ -1,23 +1,21 @@
-    <body style="background-color: rgb(239, 239, 231);">
+  <body style="background-color: rgb(239, 239, 231);">
 
-      <%= render 'shared/carousel' %>
+    <%= render 'shared/carousel' %>
 
         <section>
           <div class="intro-logo">
-            <img src="/assets/atable-logo-colour.svg" alt="main logo" style="width:350px;height:auto;">
+          <%= image_tag("atable-logo-colour.svg") %>
           </div>
           <div class="intro-text">
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+            <p>Welcome to à table !</p>
+            <p>Find the cutlery, plates, glasses and dinner sets that match the theme of your event...</p>
           </div>
           <div>
-            <img src="/assets/home-bottom-pic.jpg" class="home-bottom-pic" alt="main logo">
+          <%= image_tag("home-bottom-pic.jpg") %>
 
           </div>
         </section>
 
       <%= render 'shared/footer' %>
-      <%= yield %>
-    </body>
-
-
-
+    <%= yield %>
+  </body>
