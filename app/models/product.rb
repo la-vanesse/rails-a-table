@@ -3,7 +3,7 @@ class Product < ApplicationRecord
   has_many :bookings, dependent: :destroy
 
   # Hack thanks to Cloudinary
-  has_many_attached :photos
+  has_one_attached :photo
 
   # Added validations - don't hesitate to modify/correct it :)
   validates :name, presence: true, uniqueness: true
