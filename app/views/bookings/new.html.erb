@@ -1,13 +1,9 @@
-<<<<<<< HEAD
-<h1>new</h1>
-=======
-<div class="col-4">
-      <div class="card">
-        <h3>Book this ${product.name}!</h3>
+<div class="card">
+  <h3>Book this ${product.name}!</h3>
 
-        <%= simple_form_for [@product, @booking] do |f| %>
-          <%= f.input :start_date, as: :date, placeholder: '02/06/2022' %>
-          <%= f.input :end_date, as: :date, placeholder: '02/06/2022' %>
-          <%= f.submit class: 'btn-green' %>
-        <% end %>
->>>>>>> c1eed09912b7d71ea66087d96035652b3eb54454
+  <%= simple_form_for [@product, @booking] do |f| %>
+    <%= f.input :start_date, as: :date, placeholder: '02/06/2022' %>
+    <%= f.input :end_date, as: :date, placeholder: '02/06/2022' %>
+    <%= f.submit class: 'btn-green' %>
+  <% end %>
+</div>
