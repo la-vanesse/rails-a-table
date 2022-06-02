@@ -6,6 +6,21 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def plates
+    @products = Product.plates
+    render :index
+  end
+
+  def cutleries
+    @products = Product.cutleries
+    render :index
+  end
+
+  def glasses
+    @products = Product.glasses
+    render :index
+  end
+
   def new
     @product = Product.new
   end
@@ -14,7 +29,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.user = current_user
     if @product.save
-      redirect_to @product
+      redirect_to product_path(@product)
     else
       render :new
     end
@@ -26,7 +41,7 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
-      redirect_to @product
+      redirect_to product_path(@product)
     else
       render :edit
     end

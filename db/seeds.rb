@@ -61,7 +61,6 @@ product_2 = Product.create!(
   product_type: "Plate",
   user_id: rand(1..10),
   price: rand(5..50),
-  quantity: rand(1..100),
   is_booked: true
 )
 
@@ -70,7 +69,6 @@ product_2 = Product.create!(
 product_3 = Product.create!(
   name: "Venetto",
   description: "Steel cutlery with floral decorations",
-  event_type: "wedding",
   product_type: "Glasses",
   user_id: rand(1..10),
   price: rand(5..50),
