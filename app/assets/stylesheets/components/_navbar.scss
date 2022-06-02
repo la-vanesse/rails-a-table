@@ -75,12 +75,12 @@ width: 100%;
 
 
 .sign-in {
+  display: flex;
   color: #D6D5C1;
   color: $whetstone;
   float: right;
   margin-right: 50px;
   text-decoration: none;
-  margin-right: 50px;
 
 }
 
@@ -97,6 +97,11 @@ height: 50px;
   width: auto;
   height: 60px;
 
+}
+
+.signin {
+  display: flex;
+  align-items: center;
 }
 
 .navbar {
