@@ -26,6 +26,9 @@ gem 'email_validator'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# faker gem
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
@@ -34,6 +37,14 @@ gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form', github: 'heartcombo/simple_form'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
+# adding devise for users
+gem 'devise'
+
+# authorisation
+# gem 'pundit'
+
+# geocoder
+gem "geocoder"
 
 group :development, :test do
   gem 'pry-byebug'
