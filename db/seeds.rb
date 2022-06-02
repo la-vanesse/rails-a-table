@@ -10,42 +10,59 @@ puts "cleaning up database..."
 Product.destroy_all
 User.destroy_all
 puts "Database cleaned"
+pw = 123456
 
 10.times do
-  user = User.create!(
+  User.create!(
     name: Faker::Name.unique.name,
+    username: Faker::Name.unique.name,
     email: Faker::Internet.email,
-    address: Faker::Address.full_address
+    address: Faker::Address.full_address,
+    password: pw
   )
 end
 puts "> created #{User.count} users"
 
-# user_1 = User.create!(
-#   name: "Jack32",
-#   email: "Jack32@gmail.com",
-#   address: "Pamplemousses",
-#   phone: "7315558"
-# )
+User.create!(
+  name: "cedric",
+  username: "cedric",
+  email: "cedric@gmail.com",
+  address: "Pamplemousses",
+  password: pw,
+  phone: "7315558"
+)
+User.create!(
+  name: "Ajaghen",
+  username: "ajaghen",
+  email: "ajaghen@gmail.com",
+  address: "Chemin Grenier",
+  password: pw,
+  phone: "7316558"
+)
 
-# user_2 = User.create!(
-#   name: "Gerald",
-#   email: "gerald@gmail.com",
-#   address: "Chemin Grenier",
-#   phone: "7316558"
-# )
+User.create!(
+  name: "Vanessa",
+  username: "vanessa",
+  email: "vanessa@gmail.com",
+  address: "Blue bay",
+  password: pw,
+  phone: "7316548"
+)
 
-# user_3 = User.create!(
-#   name: "Alphose",
-#   email: "alph@gmail.com",
-#   address: "Blue bay",
-#   phone: "7316548"
-# )
+User.create!(
+  name: "karishma",
+  username: "karishma",
+  email: "karishma@gmail.com",
+  address: "Blue bay",
+  password: pw,
+  phone: "7316548"
+)
 
-product_1 = Product.create!(
+Product.create!(
   name: "Renaissance",
   description: "Steel cutlery with floral decorations",
   event_type: "Birthday",
-  product_type: "Cutlery",
+  product_type: "cutleries",
   user_id: rand(1..10),
   price: rand(5..50),
   quantity: rand(1..100),
@@ -58,9 +75,10 @@ product_2 = Product.create!(
   name: "Azalea",
   description: "Spice up the image of your dining table by opting for the gold-rimmed Verde dinner set. The vibrant jewel tones of gold and emerald green will make your meal presentation more exciting.",
   event_type: "Party",
-  product_type: "Plate",
+  product_type: "plates",
   user_id: rand(1..10),
   price: rand(5..50),
+  quantity: rand(1..100),
   is_booked: true
 )
 
@@ -69,7 +87,8 @@ product_2 = Product.create!(
 product_3 = Product.create!(
   name: "Venetto",
   description: "Steel cutlery with floral decorations",
-  product_type: "Glasses",
+  product_type: "glasses",
+  event_type: "Party",
   user_id: rand(1..10),
   price: rand(5..50),
   quantity: rand(1..100),
@@ -82,7 +101,7 @@ product_4 = Product.create!(
   name: "Farfetch",
   description: "White, grey and blue Orquestra dinner plate from Vista Alegre featuring a geometric pattern, a round shape and a shallow design.",
   event_type: "Birthday",
-  product_type: "Plate",
+  product_type: "plates",
   user_id: rand(1..10),
   price: rand(5..50),
   quantity: rand(1..100),
