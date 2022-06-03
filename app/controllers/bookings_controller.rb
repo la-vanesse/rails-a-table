@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     Booking.product = @product
-    Booking.user = current_user
+    @booking.user = current_user
     Booking.start_date = @booking.start_date.to_date
     Booking.end_date = @booking.end_date.to_date
 

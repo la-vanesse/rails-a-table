@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'users/registrations' }
   # default route / home page
   root to: 'pages#home'
   # user routes
-  get 'signin', to: 'pages#signin', as: :signin
+  # get 'signin', to: 'pages#signin', as: :signin
 
-  get 'signup', to: 'pages#signup', as: :signup
-  post 'signup', to: 'users#create'
+  # get 'signup', to: 'pages#signup', as: :signup
+  # post 'signup', to: 'users#create'
 
   get 'profile', to: 'pages#profile'
 
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   # Product_reviews routes
   get 'products/:id/reviews', to: 'reviews#index', as: :product_reviews
   get 'products/:id/reviews/new', to: 'reviews#new', as: :new_product_review
-  post 'products/:id/reviews/new', to: 'reviews#create' 
+  post 'products/:id/reviews/new', to: 'reviews#create'
   get 'products/:id/reviews/:id', to: 'reviews#show', as: :product_review
 
 

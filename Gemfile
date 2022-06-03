@@ -40,9 +40,6 @@ gem 'cloudinary', '~> 1.16.0'
 # adding devise for users
 gem 'devise'
 
-# authorisation
-# gem 'pundit'
-
 # geocoder
 gem "geocoder"
 

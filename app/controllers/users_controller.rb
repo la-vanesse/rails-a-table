@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   # for sign-up
   def new
-    @user = User.new
+  # @user = User.new
   end
 
   def create
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :address, :phone)
+    params.require(:user).permit(:name, :email, :username, :address, :phone, :password, :password_confirmation, :remember_me)
   end
 
   def set_user

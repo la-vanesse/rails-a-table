@@ -7,7 +7,10 @@
         <%= f.error_notification %>
 
           <div class="form-inputs">
-            <%= f.input :username %>
+            <%= f.input :username,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "username" }%>
               <%= f.input :email,
                         required: true,
                         autofocus: true,
@@ -15,14 +18,14 @@
             <%= f.input :password,
                         required: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password" } %>
+                        input_html: { autocomplete: "new-password" }%>
             <%= f.input :password_confirmation,
                         required: true,
-                        input_html: { autocomplete: "new-password" } %>
-          </div>
+                        input_html: { autocomplete: "new-password" }%>
+                      </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Sign up", class: 'btn btn-primary' %>
+            <%= f.button :submit, "Sign up", class: 'btn btn-success' %>
           </div>
       <% end %>
 
