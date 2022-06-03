@@ -7,6 +7,11 @@
   left: 0;
   z-index: 9999;
   width: 100%;
+
+  .user-menu {
+  justify-content: space-between;
+  margin-right: 40px;
+  }
 }
 
 
@@ -80,9 +85,9 @@ nav ul > li > a:hover::before {
   text-decoration: none;
   margin-right: 50px;
 
-  :hover
+  &:hover
   {
-    color: white
+    color: blue
   }
 }
 

@@ -1,47 +1,57 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 puts "cleaning up database..."
 Product.destroy_all
 User.destroy_all
 puts "Database cleaned"
 
+pw = 123456
+
 10.times do
-  user = User.create!(
+  User.create!(
+    username: Faker::Name.unique.name,
     name: Faker::Name.unique.name,
     email: Faker::Internet.email,
-    address: Faker::Address.full_address
+    address: Faker::Address.full_address,
+    password: pw
   )
 end
 puts "> created #{User.count} users"
 
-# user_1 = User.create!(
-#   name: "Jack32",
-#   email: "Jack32@gmail.com",
-#   address: "Pamplemousses",
-#   phone: "7315558"
-# )
+# Demo users
+User.create!(
+  username: "cedric",
+  name: "Cedric",
+  email: "Cedric@test.com",
+  address: "R.hill, 12, Paris",
+  phone: "51234567",
+  password: pw
+)
+User.create!(
+  username: "Ajagen",
+  name: "Ajagen",
+  email: "Ajagen@test.com",
+  address: "R.hill, 12, Paris",
+  phone: "51234567",
+  password: pw
+)
+User.create!(
+  username: "Karishma",
+  name: "Karishma",
+  email: "Karishma@test.com",
+  address: "R.hill, 12, Paris",
+  phone: "7315558",
+  password: pw
+)
 
-# user_2 = User.create!(
-#   name: "Gerald",
-#   email: "gerald@gmail.com",
-#   address: "Chemin Grenier",
-#   phone: "7316558"
-# )
+User.create!(
+  username: "Vanessa",
+  name: "Vanessa",
+  email: "Vanessa@test.com",
+  address: "Curepipe, Mauritius",
+  phone: "7315558",
+  password: pw
+)
 
-# user_3 = User.create!(
-#   name: "Alphose",
-#   email: "alph@gmail.com",
-#   address: "Blue bay",
-#   phone: "7316548"
-# )
-
-product_1 = Product.create!(
+Product.create!(
   name: "Renaissance",
   description: "Steel cutlery with floral decorations",
   event_type: "Birthday",
@@ -54,7 +64,7 @@ product_1 = Product.create!(
 
 # product_1.photo.attach(io: file, filename: 'flowery cutlery.jpg', content_type: 'image/jpg')
 
-product_2 = Product.create!(
+Product.create!(
   name: "Azalea",
   description: "Spice up the image of your dining table by opting for the gold-rimmed Verde dinner set. The vibrant jewel tones of gold and emerald green will make your meal presentation more exciting.",
   event_type: "Party",
@@ -67,7 +77,7 @@ product_2 = Product.create!(
 
 # product_2.photo.attach(io: file, filename: 'gold-rimmed verde plates.jpg', content_type: 'image/jpg')
 
-product_3 = Product.create!(
+Product.create!(
   name: "Venetto",
   description: "Steel cutlery with floral decorations",
   event_type: "wedding",
@@ -80,7 +90,7 @@ product_3 = Product.create!(
 
 # product_3.photo.attach(io: file, filename: 'crystal glass.jpg', content_type: 'image/jpg')
 
-product_4 = Product.create!(
+Product.create!(
   name: "Farfetch",
   description: "White, grey and blue Orquestra dinner plate from Vista Alegre featuring a geometric pattern, a round shape and a shallow design.",
   event_type: "Birthday",

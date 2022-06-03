@@ -22,16 +22,19 @@
       <%= link_to root_path do %>
         <%= image_tag "atable-icon-glass.svg", class: "navbar-icon", alt:"glasses" %>
       <% end %>
-      </ul>
+    </ul>
 
   </nav>
-      <div>
 
+  <div class = "user-menu">
+    <% if user_signed_in? %>
       <%= link_to root_path do %>
         <%= image_tag "atable-icon-upload.svg", class: "upload-icon", alt:"upload" %>
       <% end %>
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary"  %>
 
-      <%= link_to "Sign in", signin_path, class: "sign-in" %>
-      </div>
-
+    <% else %>
+      <%= button_to "Sign in", new_user_session_path, class: "btn btn-warning " %>
+    <% end %>
+  </div>
 </div>
