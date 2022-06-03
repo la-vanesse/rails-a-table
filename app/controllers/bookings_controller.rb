@@ -11,9 +11,10 @@ class BookingsController < ApplicationController
     @booking.product = @product
     @booking.start_date = @booking.start_date
     @booking.end_date = @booking.end_date
-    @booking.product.is_booked = true
+    # @booking.product.is_booked = true
     if @booking.save
-      redirect_to product_path(@product), notice: 'Booking was successfully created.'
+      @booking.product.is_booked = true
+      redirect_to product_path(@product.id), notice: 'Booking was successfully created.'
     else
       render :new, notice: 'Booking was not created. Please fill fields with valid information.'
     end
@@ -27,7 +28,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :product_id ) # :user_id
+    params.require(:booking).permit(:start_date, :end_date, :product_id) # :user_id
   end
 
   def set_product

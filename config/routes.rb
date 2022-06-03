@@ -12,10 +12,10 @@ Rails.application.routes.draw do
 
   # Product routes
   # Product_reviews routes
-  get 'products/:id/reviews', to: 'reviews#index', as: :product_reviews
-  get 'products/:id/reviews/new', to: 'reviews#new', as: :new_product_review
-  post 'products/:id/reviews/new', to: 'reviews#create'
-  get 'products/:id/reviews/:id', to: 'reviews#show', as: :product_review
+  # get 'products/:id/reviews', to: 'reviews#index', as: :product_reviews
+  # get 'products/:id/reviews/new', to: 'reviews#new', as: :new_product_review
+  # post 'products/:id/reviews/new', to: 'reviews#create'
+  # get 'products/:id/reviews/:id', to: 'reviews#show', as: :product_review
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # resources :products, only: %i[index show] do
@@ -32,10 +32,8 @@ Rails.application.routes.draw do
       get :cutleries
       get :glasses
     end
-    member do
-      resources :bookings, only: %i[create new]
-      resources :reviews, only: %i[show create new]
-    end
+    resources :bookings, only: %i[create new]
+    resources :reviews, only: %i[create new]
   end
   resources :products, only: [:delete]
 end

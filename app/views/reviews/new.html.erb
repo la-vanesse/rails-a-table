@@ -1,0 +1,9 @@
+<div class="col-4">
+      <div class="card">
+        <h3>Review <%= @product.name %>!</h3>
+
+        <%= simple_form_for [@product, @review] do |f| %>
+          <%= f.input :rating %>
+          <%= f.input :comment %>
+          <%= f.submit class: 'btn-green' %>
+        <% end %>

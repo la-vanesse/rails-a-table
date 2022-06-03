@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "cleaning up database..."
-Product.destroy_all
 User.destroy_all
+Product.destroy_all
 puts "Database cleaned"
 pw = 123456
 
@@ -58,7 +58,7 @@ User.create!(
   phone: "7316548"
 )
 
-Product.create!(
+product_1 = Product.create!(
   name: "Renaissance",
   description: "Steel cutlery with floral decorations",
   event_type: "Birthday",

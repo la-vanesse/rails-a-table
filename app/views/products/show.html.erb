@@ -13,8 +13,8 @@
         </div>
         <div class="card-buttons">
             <%= link_to "Update", edit_product_path(@product), class: "btn btn-green" %>
-            <%= link_to "Book", new_booking_path(@product), class: "btn btn-green" %>
-            <%= link_to "Leave a review", new_review_path(@product), class: "btn btn-green" %>
+            <%= link_to "Book", new_product_booking_path(@product), class: "btn btn-green" %>
+            <%= link_to "Leave a review", new_product_review_path(@product), class: "btn btn-green" %>
             <%= link_to "Delete", product_path(@product), method: :delete, data: { confirm: 'Are you sure?' },  class: "btn btn-green" %>
         </div>
       </div>
