@@ -1,0 +1,10 @@
+
+<div class="col-4">
+      <div class="card">
+        <h3>Book <%= @product.name %>!</h3>
+
+        <%= simple_form_for [@product, @booking] do |f| %>
+          <%= f.input :start_date, as: :date, placeholder: 04/06/2022 %>
+          <%= f.input :end_date, as: :date, placeholder: 06/06/2022%>
+          <%= f.submit class: 'btn-green' %>
+        <% end %>

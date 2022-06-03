@@ -11,6 +11,25 @@
           <p>Owner of product : <%= @product.user_id %></p>
           <p><%= @product.name %> is currently <%= @product.is_booked ? "booked" : "not booked" %></p>
         </div>
+        <div class="list-group">
+          <h3>Reviews on <%=@product.name%></h3>
+            <% @product.reviews.each do |review| %>
+                <li class="list-review">
+                  <small>
+                    <% count = 0 %>
+                    <% 5.times do %>
+                      <% if review.rating > count %>
+                        <i class="fas fa-star star-yellow"></i>
+                      <% else %>
+                        <i class="far fa-star"></i>
+                      <% end %>
+                      <% count += 1 %>
+                    <% end %>
+                  </small>
+                  <p><%= review.comment %></p>
+                </li>
+            <% end %>
+        </div>
         <div class="card-buttons">
             <%= link_to "Update", edit_product_path(@product), class: "btn btn-green" %>
             <%= link_to "Book", new_product_booking_path(@product), class: "btn btn-green" %>

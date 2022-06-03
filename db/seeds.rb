@@ -124,14 +124,39 @@ product_4 = Product.create!(
 
 puts "> created #{Product.count} products"
 
-40.times do
+5.times do
   Review.create!(
     rating: rand(1..5),
     comment: Faker::Lorem.sentence(word_count: rand(3..10)),
     user_id: rand(1..10),
-    product_id: rand(1..4)
+    product_id: 1
   )
 end
+
+4.times do
+  Review.create!(
+    rating: rand(1..5),
+    comment: Faker::Lorem.sentence(word_count: rand(3..10)),
+    user_id: rand(1..10),
+    product_id: 2
+  )
+end
+
+2.times do
+  Review.create!(
+    rating: rand(1..5),
+    comment: Faker::Lorem.sentence(word_count: rand(3..10)),
+    user_id: rand(1..10),
+    product_id: 3
+  )
+end
+
+Review.create!(
+  rating: rand(1..5),
+  comment: Faker::Lorem.sentence(word_count: rand(3..10)),
+  user_id: rand(1..10),
+  product_id: 4
+)
 
 puts "> Created #{Review.count} random reviews"
 
