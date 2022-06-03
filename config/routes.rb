@@ -17,8 +17,8 @@ Rails.application.routes.draw do
       get :cutleries
       get :glasses
     end
-    resources :bookings, only: %i[create new]
-    resources :reviews, only: %i[new]
+    resources :bookings, only: %i[new create]
+    resources :reviews, only: %i[new create]
   end
   resources :reviews, only: [:destroy]
 end
