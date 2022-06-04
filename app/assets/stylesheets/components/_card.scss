@@ -4,10 +4,11 @@
   justify-content: center;
   align-items: center;
   background-color: transparent !important;
-  border-color: black;
+  border-color: #BEB8AC;
   height: auto;
   padding: .25rem;
-  margin: 1rem;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
  .card-body {
@@ -33,7 +34,7 @@
 
 .card {
   img {
-    margin: 0.50rem 0.5rem;
+    margin-top: 8px;
     padding: 0 0.5rem;
     min-width: 100%;
     min-height: auto;

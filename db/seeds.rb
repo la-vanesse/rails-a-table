@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 puts "cleaning up database..."
 Review.destroy_all
 Product.destroy_all
@@ -25,39 +17,39 @@ pw = 123456
 end
 puts "> created #{User.count} users"
 
+# Demo users
 User.create!(
-  name: "cedric",
   username: "cedric",
-  email: "cedric@gmail.com",
-  address: "Pamplemousses",
-  password: pw,
-  phone: "7315558"
+  name: "Cedric",
+  email: "Cedric@test.com",
+  address: "R.hill, 12, Paris",
+  phone: "51234567",
+  password: pw
 )
 User.create!(
-  name: "Ajaghen",
-  username: "ajaghen",
-  email: "ajaghen@gmail.com",
-  address: "Chemin Grenier",
-  password: pw,
-  phone: "7316558"
+  username: "Ajagen",
+  name: "Ajagen",
+  email: "Ajagen@test.com",
+  address: "R.hill, 12, Paris",
+  phone: "51234567",
+  password: pw
+)
+User.create!(
+  username: "Karishma",
+  name: "Karishma",
+  email: "Karishma@test.com",
+  address: "R.hill, 12, Paris",
+  phone: "7315558",
+  password: pw
 )
 
 User.create!(
+  username: "Vanessa",
   name: "Vanessa",
-  username: "vanessa",
-  email: "vanessa@gmail.com",
-  address: "Blue bay",
-  password: pw,
-  phone: "7316548"
-)
-
-User.create!(
-  name: "karishma",
-  username: "karishma",
-  email: "karishma@gmail.com",
-  address: "Blue bay",
-  password: pw,
-  phone: "7316548"
+  email: "Vanessa@test.com",
+  address: "Curepipe, Mauritius",
+  phone: "7315558",
+  password: pw
 )
 
 user_id_first = User.first.id
@@ -138,3 +130,20 @@ Product.create!(
 # end
 
 puts "> created #{Product.count} products"
+
+product_id_first = Product.first.id
+product_id_last = Product.last.id
+
+40.times do
+  Review.create!(
+    rating: rand(1..5),
+    comment: Faker::Lorem.sentence(word_count: rand(3..10)),
+    user_id: rand(user_id_first..user_id_last),
+    product_id: rand(product_id_first..product_id_last)
+  )
+end
+
+puts "> Created #{Review.count} random reviews"
+
+puts "> Done!"
+

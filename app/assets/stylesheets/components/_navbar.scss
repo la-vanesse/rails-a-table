@@ -1,6 +1,17 @@
 
 .navbar {
-position: sticky; top: 0; left: 0; z-index: 9999; width: 100%;
+  display: flex;
+  background: $dark-gray;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+
+  .user-menu {
+  justify-content: space-between;
+  margin-right: 40px;
+  }
 }
 
 
@@ -19,10 +30,6 @@ position: sticky; top: 0; left: 0; z-index: 9999; width: 100%;
   width: 80%;
 }
 
-.navbar {
-  background: $dark-gray;
-}
-
 header::after {
   content: '';
   display: table;
@@ -31,21 +38,17 @@ header::after {
 
 nav {
   float: right;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+    padding-top: 8px;
+    position: relative;
+  }
 }
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-nav li {
-  display: inline-block;
-  padding-top: 8px;
-
-  position: relative;
-}
-
 
 nav ul > li > a {
   color: $whetstone;
@@ -58,19 +61,19 @@ nav ul > li > a:hover {
 
 
 nav ul > li > a::before {
-content: '';
-display: block;
-height: 1px;
-background-color: $whetstone;
+  content: '';
+  display: block;
+  height: 1px;
+  background-color: $whetstone;
 
-position: absolute;
-bottom: 0;
-width: 0%;
-transition: all ease-in-out 100ms;
+  position: absolute;
+  bottom: 0;
+  width: 0%;
+  transition: all ease-in-out 100ms;
 }
 
 nav ul > li > a:hover::before {
-width: 100%;
+  width: 100%;
 }
 
 
@@ -82,10 +85,10 @@ width: 100%;
   margin-right: 50px;
   text-decoration: none;
 
-}
-
-.sign-in:hover {
-  color: white;
+  &:hover
+  {
+    color: blue
+  }
 }
 
 .navbar-icon {
@@ -107,7 +110,6 @@ height: 50px;
 .navbar {
 display: flex;
 }
-
 
 .upload-icon:hover {
 filter: invert(0.25);
