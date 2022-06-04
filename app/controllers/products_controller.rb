@@ -39,7 +39,10 @@ class ProductsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @review = Review.new
+    @booking = Booking.new
+  end
 
   def edit; end
 
