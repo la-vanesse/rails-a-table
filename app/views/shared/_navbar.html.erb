@@ -26,19 +26,18 @@
       <%= link_to glasses_products_path do %>
         <%= image_tag "atable-icon-glass.svg", class: "navbar-icon", alt:"glasses" %>
       <% end %>
-      </ul>
-
+    </ul>
   </nav>
-      <div class="signin">
 
+  <div class = "sign-in">
+    <% if user_signed_in? %>
       <%= link_to new_product_path do %>
         <%= image_tag "atable-icon-upload.svg", class: "upload-icon", alt:"upload" %>
       <% end %>
-      <% if !current_user %>
-        <%= link_to "Sign in", new_user_registration_path, class: "sign-in" %>
-      <% else %>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "sign-in" %>
-      <% end %>
-      </div>
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary"  %>
 
+    <% else %>
+      <%= button_to "Sign in", new_user_session_path, class: "btn btn-warning " %>
+    <% end %>
+  </div>
 </div>
