@@ -1,9 +1,13 @@
-    <%= simple_form_for(@product) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input :event_type %>
-      <%= f.input :product_type %>
-      <%= f.input :price %>
-      <%= f.input :quantity %>
-      <%= f.button :submit , class: "btn btn-custom " %>
-    <% end %>
+<div class="form-container">
+  <div class="simple-form">
+      <%= simple_form_for(@product) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :event_type %>
+        <%= f.input :product_type %>
+        <%= f.input :price %>
+        <%= f.input :quantity %>
+        <%= f.button :submit , class: "btn btn-custom " %>
+      <% end %>
+  </div>
+</div>
