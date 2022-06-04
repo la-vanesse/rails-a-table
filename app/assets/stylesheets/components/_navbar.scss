@@ -78,12 +78,12 @@ nav ul > li > a:hover::before {
 
 
 .sign-in {
+  display: flex;
   color: #D6D5C1;
   color: $whetstone;
   float: right;
   margin-right: 50px;
   text-decoration: none;
-  margin-right: 50px;
 
   &:hover
   {
@@ -100,6 +100,15 @@ height: 50px;
   width: auto;
   height: 60px;
 
+}
+
+.signin {
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+display: flex;
 }
 
 .upload-icon:hover {

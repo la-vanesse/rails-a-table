@@ -16,11 +16,9 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to product_path(@product)
     else
-      render 'products/:id/reviews/new', alert: 'Invalid Review. Review not saved'
+      render :new, alert: 'Invalid Review. Review not saved'
     end
   end
-
-  def show; end
 
   private
 
@@ -30,5 +28,9 @@ class ReviewsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:product_id])
+  end
+
+  def set_user
+    @user = User.find(params[:user_id])
   end
 end

@@ -1,0 +1,27 @@
+<div class="body">
+  <div class="row">
+    <div class="col-12">
+      <h1>All our Products</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @products.each do |product| %>
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem;">
+            <img src= "" class="card-img-top" alt=""> #to add images source(cloudinary)
+            <div class="card-body">
+              <h2><%= product.name %></h2>
+              <p><%= product.description.truncate_words(10) %></p>
+            </div>
+            <div class="card-buttons">
+              <%= link_to "More info", product_path(product), class: "btn btn-green" %>
+              <% if current_user %>
+                <%= link_to "Book", new_product_booking_path(product),  class: "btn btn-green" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>

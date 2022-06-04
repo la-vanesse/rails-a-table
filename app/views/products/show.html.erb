@@ -1,19 +1,46 @@
-<div class="row">
-    <% @products.each do |product| %>
-      <div class="col-md-4">
-  <div class="card" style="width: 18rem;">
-    <img src= "" class="card-img-top" alt="crystal glass"> #to add images source(cloudinary)
-  <div class="card-body">
-    <h2><%= product.name %></h2>
-    <p><%= product.description.truncate_words(10) %></p>
-  </div>
-  <div class="card-buttons">
-    <%= link_to "Update", "edit_user_product_path(product)", class: "btn btn-green" %>
-    <%= link_to "Delete", "user_product(product)",  class: "btn btn-green", method: :delete,
-                data: { confirm: "Are you sure?" },
-                class: 'ms-3 text-danger' %>
-          </div>
+<div class="body">
+  <div class="row">
+      <div class="col-8">
+        <div class="user-card">
+          <h1><%= @product.name %></h1>
+        </div>
+        <div class="user-card">
+          <p>Description : <%= @product.description %></p>
+          <p>Price : <%= @product.price %></p>
+          <p>Quantity available : <%= @product.quantity %></p>
+          <p>Owner of product : <%= @product.user_id %></p>
+          <p><%= @product.name %> is currently <%= @product.is_booked ? "booked" : "not booked" %></p>
+        </div>
+        <div class="list-group">
+        <h2><%= pluralize @product.reviews.size, "review" %> on <%=@product.name%></h2>
+        <% if @product.reviews.blank? %>
+          Be the first to leave a review for <%= @product.name %>
+        <% else %>
+            <% @product.reviews.each do |review| %>
+                <li class="list-review">
+                  <small>
+                    <% count = 0 %>
+                    <% 5.times do %>
+                      <% if review.rating > count %>
+                        <i class="fas fa-star star-yellow"></i>
+                      <% else %>
+                        <i class="far fa-star"></i>
+                      <% end %>
+                      <% count += 1 %>
+                    <% end %>
+                  </small>
+                  <p><%= review.comment %></p>
+                </li>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="card-buttons">
+            <%= link_to "Update", edit_product_path(@product), class: "btn btn-green" %>
+            <% if current_user  %>
+              <%= link_to "Book", new_product_booking_path(@product), class: "btn btn-green" %>
+              <%= link_to "Leave a review", new_product_review_path(@product), class: "btn btn-green" %>
+            <% end %>
+            <%= link_to "Delete", product_path(@product), method: :delete, remote: true, data: { confirm: 'Are you sure?' },  class: "btn btn-green" %>
         </div>
       </div>
-    <% end %>
-  </div>
+</div>

@@ -9,43 +9,26 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    Booking.product = @product
-    Booking.user = current_user
-    Booking.start_date = @booking.start_date.to_date
-    Booking.end_date = @booking.end_date.to_date
-
+    @booking.product = @product
+    @booking.user = current_user
+    @booking.start_date = @booking.start_date
+    @booking.end_date = @booking.end_date
+    @booking.product.is_booked = true
     if @booking.save
-      redirect_to home_path, notice: 'Booking was successfully created.'
+      redirect_to product_path(@product), notice: 'Booking was successfully created.'
     else
       render :new, notice: 'Booking was not created. Please fill fields with valid information.'
     end
   end
 
-  # show bookings made by current user
   def show
     @bookings = Booking.where(user: current_user)
-  end
-
-  def edit
-  end
-
-  def update
-    if @booking.update(booking_params)
-      redirect_to bookings_path, notice: 'Booking was successfully updated.'
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @booking.destroy
-    redirect_to bookings_path, notice: 'Selected Booking was successfully canceled.'
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :user_id, :product_id)
+    params.require(:booking).permit(:start_date, :end_date, :product_id)
   end
 
   def set_product
@@ -53,6 +36,6 @@ class BookingsController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:user_id])
+    @user = current_user
   end
 end
