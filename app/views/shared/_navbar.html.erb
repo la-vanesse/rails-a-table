@@ -34,10 +34,10 @@
       <%= link_to new_product_path do %>
         <%= image_tag "atable-icon-upload.svg", class: "upload-icon", alt:"upload" %>
       <% end %>
-      <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary"  %>
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-sign-in" %>
 
     <% else %>
-      <%= button_to "Sign in", new_user_session_path, class: "btn btn-warning " %>
+      <%= button_to "Sign in", new_user_session_path, class: "btn btn-sign-in " %>
     <% end %>
   </div>
 </div>

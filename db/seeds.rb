@@ -1,3 +1,6 @@
+require "open-uri"
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1654331223/yxqfhqx93v4znphoqm4c.jpg')
+
 puts "cleaning up database..."
 Review.destroy_all
 Product.destroy_all
@@ -27,9 +30,9 @@ User.create!(
   password: pw
 )
 User.create!(
-  username: "Ajagen",
-  name: "Ajagen",
-  email: "Ajagen@test.com",
+  username: "Ajaghen",
+  name: "Ajaghen",
+  email: "Ajaghen@test.com",
   address: "R.hill, 12, Paris",
   phone: "51234567",
   password: pw
@@ -55,7 +58,7 @@ User.create!(
 user_id_first = User.first.id
 user_id_last = User.last.id
 
-Product.create!(
+p1=Product.create!(
   name: "Renaissance",
   description: "Steel cutlery with floral decorations",
   event_type: "Birthday",
@@ -66,7 +69,7 @@ Product.create!(
   is_booked: false
 )
 
-# product_1.photo.attach(io: file, filename: 'flowery cutlery.jpg', content_type: 'image/jpg')
+p1.photo.attach(io: file, filename: 'flowery cutlery.jpg', content_type: 'image/jpg')
 
 Product.create!(
   name: "Azalea",
@@ -146,4 +149,3 @@ end
 puts "> Created #{Review.count} random reviews"
 
 puts "> Done!"
-
