@@ -7,8 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "cleaning up database..."
-User.destroy_all
+Review.destroy_all
 Product.destroy_all
+User.destroy_all
+
 puts "Database cleaned"
 pw = 123456
 
@@ -58,12 +60,15 @@ User.create!(
   phone: "7316548"
 )
 
-product_1 = Product.create!(
+user_id_first = User.first.id
+user_id_last = User.last.id
+
+Product.create!(
   name: "Renaissance",
   description: "Steel cutlery with floral decorations",
   event_type: "Birthday",
   product_type: "cutleries",
-  user_id: rand(1..10),
+  user_id: rand(user_id_first..user_id_last),
   price: rand(5..50),
   quantity: rand(1..100),
   is_booked: false
@@ -71,12 +76,12 @@ product_1 = Product.create!(
 
 # product_1.photo.attach(io: file, filename: 'flowery cutlery.jpg', content_type: 'image/jpg')
 
-product_2 = Product.create!(
+Product.create!(
   name: "Azalea",
   description: "Spice up the image of your dining table by opting for the gold-rimmed Verde dinner set. The vibrant jewel tones of gold and emerald green will make your meal presentation more exciting.",
   event_type: "Party",
   product_type: "plates",
-  user_id: rand(1..10),
+  user_id: rand(user_id_first..user_id_last),
   price: rand(5..50),
   quantity: rand(1..100),
   is_booked: true
@@ -84,12 +89,12 @@ product_2 = Product.create!(
 
 # product_2.photo.attach(io: file, filename: 'gold-rimmed verde plates.jpg', content_type: 'image/jpg')
 
-product_3 = Product.create!(
+Product.create!(
   name: "Venetto",
   description: "Steel cutlery with floral decorations",
   product_type: "glasses",
   event_type: "Party",
-  user_id: rand(1..10),
+  user_id: rand(user_id_first..user_id_last),
   price: rand(5..50),
   quantity: rand(1..100),
   is_booked: false
@@ -97,12 +102,12 @@ product_3 = Product.create!(
 
 # product_3.photo.attach(io: file, filename: 'crystal glass.jpg', content_type: 'image/jpg')
 
-product_4 = Product.create!(
+Product.create!(
   name: "Farfetch",
   description: "White, grey and blue Orquestra dinner plate from Vista Alegre featuring a geometric pattern, a round shape and a shallow design.",
   event_type: "Birthday",
   product_type: "plates",
-  user_id: rand(1..10),
+  user_id: rand(user_id_first..user_id_last),
   price: rand(5..50),
   quantity: rand(1..100),
   is_booked: false
@@ -125,7 +130,7 @@ product_5 = Product.create!(
 #     description: Faker::Food.description,
 #     event_type: Faker::Food.spice,
 #     product_type: Faker::Food.ingredient,
-#     user_id: rand(1..10),
+#     user_id: rand(user_id_first..user_id_last),
 #     price: rand(5..50),
 #     quantity: rand(1..100),
 #     is_booked: false
@@ -133,41 +138,3 @@ product_5 = Product.create!(
 # end
 
 puts "> created #{Product.count} products"
-
-5.times do
-  Review.create!(
-    rating: rand(1..5),
-    comment: Faker::Lorem.sentence(word_count: rand(3..10)),
-    user_id: rand(1..10),
-    product_id: 1
-  )
-end
-
-4.times do
-  Review.create!(
-    rating: rand(1..5),
-    comment: Faker::Lorem.sentence(word_count: rand(3..10)),
-    user_id: rand(1..10),
-    product_id: 2
-  )
-end
-
-2.times do
-  Review.create!(
-    rating: rand(1..5),
-    comment: Faker::Lorem.sentence(word_count: rand(3..10)),
-    user_id: rand(1..10),
-    product_id: 3
-  )
-end
-
-Review.create!(
-  rating: rand(1..5),
-  comment: Faker::Lorem.sentence(word_count: rand(3..10)),
-  user_id: rand(1..10),
-  product_id: 4
-)
-
-puts "> Created #{Review.count} random reviews"
-
-puts "> Done!"
