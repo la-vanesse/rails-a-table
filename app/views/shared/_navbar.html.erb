@@ -7,6 +7,10 @@
       <% end %>
 
       <li> <%= link_to products_path do %>
+        <%= image_tag "atable-icon-all.svg", class: "navbar-icon", alt:"set" %>
+      <% end %>
+
+      <li> <%= link_to sets_products_path do %>
         <%= image_tag "atable-icon-set.svg", class: "navbar-icon", alt:"set" %>
       <% end %>
 
@@ -30,8 +34,11 @@
       <%= link_to new_product_path do %>
         <%= image_tag "atable-icon-upload.svg", class: "upload-icon", alt:"upload" %>
       <% end %>
-
-      <%= link_to "Sign in", signin_path, class: "sign-in" %>
+      <% if !current_user %>
+        <%= link_to "Sign in", new_user_registration_path, class: "sign-in" %>
+      <% else %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "sign-in" %>
+      <% end %>
       </div>
 
 </div>

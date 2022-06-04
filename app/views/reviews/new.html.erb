@@ -2,7 +2,7 @@
       <div class="card">
         <h3>Review <%= @product.name %>!</h3>
 
-        <%= simple_form_for [@product, @review] do |f| %>
+        <%= simple_form_for([@product, @review], remote: true) do |f| %>
           <%= f.input :rating %>
           <%= f.input :comment %>
           <%= f.submit class: 'btn-green' %>

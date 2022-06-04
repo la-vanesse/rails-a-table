@@ -114,6 +114,16 @@ Product.create!(
 )
 # product_4.photo.attach(io: file, filename: 'geometric dinner set', content_type: 'image/jpg')
 
+product_5 = Product.create!(
+  name: "Franky",
+  description: "Simplicity and utility in white stacking porcelain.",
+  event_type: "Wedding",
+  product_type: "sets",
+  user_id: rand(1..10),
+  price: rand(5..50),
+  quantity: rand(1..100),
+  is_booked: false
+)
 # 15.times do
 #   Product.create!(
 #     name: Faker::Food.dish,
@@ -128,19 +138,3 @@ Product.create!(
 # end
 
 puts "> created #{Product.count} products"
-
-product_id_first = Product.first.id
-product_id_last = Product.last.id
-
-40.times do
-  Review.create!(
-    rating: rand(1..5),
-    comment: Faker::Lorem.sentence(word_count: rand(3..10)),
-    user_id: rand(user_id_first..user_id_last),
-    product_id: rand(product_id_first..product_id_last)
-  )
-end
-
-puts "> Created #{Review.count} random reviews"
-
-puts "> Done!"

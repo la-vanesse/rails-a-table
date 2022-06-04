@@ -1,0 +1,9 @@
+<div class="container card rounded-3 mt-4 " style="width: 600px">
+  <div class="form p-3">
+    <%= simple_form_for(@user) do |f| %>
+      <%= f.input :email, placeholder: 'Email', required: true %>
+      <%= f.input :password, placeholder: 'Password', required: true %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>

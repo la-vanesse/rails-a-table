@@ -5,6 +5,11 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def sets
+    @products = Product.sets
+    render :index
+  end
+
   def plates
     @products = Product.plates
     render :index
@@ -34,7 +39,10 @@ class ProductsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @review = Review.new
+    @booking = Booking.new
+  end
 
   def edit; end
 
