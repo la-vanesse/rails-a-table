@@ -114,12 +114,12 @@ Product.create!(
 )
 # product_4.photo.attach(io: file, filename: 'geometric dinner set', content_type: 'image/jpg')
 
-product_5 = Product.create!(
+Product.create!(
   name: "Franky",
   description: "Simplicity and utility in white stacking porcelain.",
   event_type: "Wedding",
   product_type: "sets",
-  user_id: rand(1..10),
+  user_id: rand(user_id_first..user_id_last),
   price: rand(5..50),
   quantity: rand(1..100),
   is_booked: false
