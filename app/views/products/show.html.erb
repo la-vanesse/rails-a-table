@@ -7,34 +7,32 @@
         </div>
           <h1><%= @product.name %></h1>
         </div>
-        <div class="card">
           <p>Description : <%= @product.description %></p>
           <p>Price : <%= @product.price %></p>
           <p>Quantity available : <%= @product.quantity %></p>
           <p>Owner of product : <%= User.find(@product.user_id).name %></p>
           <p><%= @product.name %> is currently <%= @product.is_booked %></p>  <%# ? "booked" : "not booked" %>
-        </div>
         <div class="list-group">
-        <h2><%= pluralize @product.reviews.size, "review" %> on <%=@product.name%></h2>
-        <% if @product.reviews.blank? %>
-          Be the first to leave a review for <%= @product.name %>
-        <% else %>
-            <% @product.reviews.each do |review| %>
-                <li class="list-review">
-                  <small>
-                    <% count = 0 %>
-                    <% 5.times do %>
-                      <% if review.rating > count %>
-                        <i class="fas fa-star star-yellow"></i>
-                      <% else %>
-                        <i class="far fa-star"></i>
+          <h2><%= pluralize @product.reviews.size, "review" %> on <%=@product.name%></h2>
+          <% if @product.reviews.blank? %>
+            Be the first to leave a review for <%= @product.name %>
+          <% else %>
+              <% @product.reviews.each do |review| %>
+                  <li class="list-review">
+                    <small>
+                      <% count = 0 %>
+                      <% 5.times do %>
+                        <% if review.rating > count %>
+                          <i class="fas fa-star star-yellow"></i>
+                        <% else %>
+                          <i class="far fa-star"></i>
+                        <% end %>
+                        <% count += 1 %>
                       <% end %>
-                      <% count += 1 %>
-                    <% end %>
-                  </small>
-                  <p><%= review.comment %></p>
-                </li>
-            <% end %>
+                    </small>
+                    <p><%= review.comment %></p>
+                  </li>
+              <% end %>
           <% end %>
         </div>
         <div class="card-buttons">
