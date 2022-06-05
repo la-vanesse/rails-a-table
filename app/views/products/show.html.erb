@@ -11,7 +11,7 @@
           <p>Description : <%= @product.description %></p>
           <p>Price : <%= @product.price %></p>
           <p>Quantity available : <%= @product.quantity %></p>
-          <p>Owner of product : <%= @product.user_id %></p>
+          <p>Owner of product : <%= User.find(@product.user_id) %></p>
           <p><%= @product.name %> is currently <%= @product.is_booked ? "booked" : "not booked" %></p>
         </div>
         <div class="list-group">
