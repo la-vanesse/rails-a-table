@@ -5,10 +5,11 @@
   align-items: center;
   background-color: transparent !important;
   border-color: #BEB8AC;
+  border-radius: 8px;
   height: auto;
   padding: .25rem;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
  .card-body {
@@ -30,6 +31,7 @@
   width: 100%;
   justify-content: space-around;
   align-items: center;
+
 }
 
 .card {

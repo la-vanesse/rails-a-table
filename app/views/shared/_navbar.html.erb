@@ -2,27 +2,27 @@
 <div class="navbar">
   <nav>
     <ul>
-      <li > <%= link_to root_path do %>
+      <li> <%= link_to root_path do %>
         <%= image_tag "atable-logo-white.svg", class: "home-logo", alt:"home" %>
       <% end %>
 
-      <li> <%= link_to products_path do %>
+      <li rel="tooltip" title="show all products"> <%= link_to products_path do %>
         <%= image_tag "atable-icon-all.svg", class: "navbar-icon", alt:"set" %>
       <% end %>
 
-      <li> <%= link_to sets_products_path do %>
+      <li rel="tooltip" title="show all sets"> <%= link_to sets_products_path do %>
         <%= image_tag "atable-icon-set.svg", class: "navbar-icon", alt:"set" %>
       <% end %>
 
-      <li> <%= link_to plates_products_path do %>
+      <li rel="tooltip" title="show all plates"> <%= link_to plates_products_path do %>
         <%= image_tag "atable-icon-plate.svg", class: "navbar-icon", alt:"plates" %>
       <% end %>
 
-      <li> <%= link_to cutleries_products_path do %>
+      <li rel="tooltip" title="show all cutleries"> <%= link_to cutleries_products_path do %>
         <%= image_tag "atable-icon-fork.svg", class: "navbar-icon", alt:"forks" %>
       <% end %>
 
-      <li>
+      <li rel="tooltip" title="show all glasses">
       <%= link_to glasses_products_path do %>
         <%= image_tag "atable-icon-glass.svg", class: "navbar-icon", alt:"glasses" %>
       <% end %>
