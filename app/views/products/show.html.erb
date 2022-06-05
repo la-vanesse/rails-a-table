@@ -11,8 +11,8 @@
           <p>Description : <%= @product.description %></p>
           <p>Price : <%= @product.price %></p>
           <p>Quantity available : <%= @product.quantity %></p>
-          <p>Owner of product : <%= User.find(@product.user_id) %></p>
-          <p><%= @product.name %> is currently <%= @product.is_booked ? "booked" : "not booked" %></p>
+          <p>Owner of product : <%= User.find(@product.user_id).name %></p>
+          <p><%= @product.name %> is currently <%= @product.is_booked %></p>  <%# ? "booked" : "not booked" %>
         </div>
         <div class="list-group">
         <h2><%= pluralize @product.reviews.size, "review" %> on <%=@product.name%></h2>

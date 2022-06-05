@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.start_date = @booking.start_date
     @booking.end_date = @booking.end_date
-    @booking.product._update_is_booked = true
+    @booking.product.is_booked = true
     if @booking.save
       redirect_to product_path(@product), notice: 'Booking was successfully created.'
     else
