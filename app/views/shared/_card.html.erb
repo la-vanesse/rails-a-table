@@ -1,8 +1,10 @@
 <div class="card" style="width: 18rem;">
-  <%= image_tag("dinner-set.png", class: "card-img-top", alt: "crystal glass") %>
-    <div class="card-body">
-      <h2>Card title</h2>
-      <p>Lorem ipsim dolor sit amet consectetur adipisicing elit. Magni aliquid sapiente, obcaecati dolore rerum, facilis.</p>
+  <div class="img">
+    <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
+  </div>
+  <div class="card-body">
+    <h2>Card title</h2>
+    <p>Lorem ipsim dolor sit amet consectetur adipisicing elit. Magni aliquid sapiente, obcaecati dolore rerum, facilis.</p>
   </div>
   <div class="card-buttons">
     <%= link_to "Update", "#", class: "btn btn-green" %>

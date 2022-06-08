@@ -81,6 +81,7 @@ nav ul > li > a:hover::before {
   display: flex;
   color: #D6D5C1;
   color: $whetstone;
+  align-items: center;
   float: right;
   margin-right: 50px;
   text-decoration: none;
@@ -114,4 +115,14 @@ display: flex;
 .upload-icon:hover {
 filter: invert(0.25);
 
+}
+
+.btn-sign-in {
+  width: 100px;
+  border-color: #BEB8AC;
+  border-radius: 4px;
+  &:hover {
+  background-color: #574F52;
+  color: white !important;
+  }
 }
