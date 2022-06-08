@@ -1,13 +1,11 @@
 .btn-green {
-  color: white !important;
-  padding: 8px 28px;
+  width: 400px;
+  background-color: #DEDECE;
+  border-color: #BEB8AC;
+  border-radius: 8px;
   margin: 8px;
-  border-radius: 4px;
-  flex: 1 1 auto;
-  background: $btn-green !important;
-  transition: background 0.3s ease;
   &:hover {
-  background: $btn-hover !important;
+  background-color: #574F52;
   color: white !important;
   }
 }

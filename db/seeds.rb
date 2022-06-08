@@ -1,4 +1,5 @@
 require "open-uri"
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1654331223/yxqfhqx93v4znphoqm4c.jpg')
 
 puts "cleaning up database..."
 Review.destroy_all
@@ -29,9 +30,9 @@ User.create!(
   password: pw
 )
 User.create!(
-  username: "Ajagen",
-  name: "Ajagen",
-  email: "Ajagen@test.com",
+  username: "Ajaghen",
+  name: "Ajaghen",
+  email: "Ajaghen@test.com",
   address: "R.hill, 12, Paris",
   phone: "51234567",
   password: pw
