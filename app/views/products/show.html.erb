@@ -1,37 +1,38 @@
 <div class="body">
   <div class="row">
       <div class="col-8">
-        <div class="user-card">
+        <div class="card">
+        <div class="img">
+          <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
+        </div>
           <h1><%= @product.name %></h1>
         </div>
-        <div class="user-card">
           <p>Description : <%= @product.description %></p>
           <p>Price : <%= @product.price %></p>
           <p>Quantity available : <%= @product.quantity %></p>
-          <p>Owner of product : <%= @product.user_id %></p>
+          <p>Owner of product : <%= User.find(@product.user_id).name %></p>
           <p><%= @product.name %> is currently <%= @product.is_booked ? "booked" : "not booked" %></p>
-        </div>
         <div class="list-group">
-        <h2><%= pluralize @product.reviews.size, "review" %> on <%=@product.name%></h2>
-        <% if @product.reviews.blank? %>
-          Be the first to leave a review for <%= @product.name %>
-        <% else %>
-            <% @product.reviews.each do |review| %>
-                <li class="list-review">
-                  <small>
-                    <% count = 0 %>
-                    <% 5.times do %>
-                      <% if review.rating > count %>
-                        <i class="fas fa-star star-yellow"></i>
-                      <% else %>
-                        <i class="far fa-star"></i>
+          <h2><%= pluralize @product.reviews.size, "review" %> on <%=@product.name%></h2>
+          <% if @product.reviews.blank? %>
+            Be the first to leave a review for <%= @product.name %>
+          <% else %>
+              <% @product.reviews.each do |review| %>
+                  <li class="list-review">
+                    <small>
+                      <% count = 0 %>
+                      <% 5.times do %>
+                        <% if review.rating > count %>
+                          <i class="fas fa-star star-yellow"></i>
+                        <% else %>
+                          <i class="far fa-star"></i>
+                        <% end %>
+                        <% count += 1 %>
                       <% end %>
-                      <% count += 1 %>
-                    <% end %>
-                  </small>
-                  <p><%= review.comment %></p>
-                </li>
-            <% end %>
+                    </small>
+                    <p><%= review.comment %></p>
+                  </li>
+              <% end %>
           <% end %>
         </div>
         <div class="card-buttons">

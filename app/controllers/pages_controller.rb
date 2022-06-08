@@ -10,6 +10,6 @@ class PagesController < ApplicationController
 
   # may need different action code for signin
   def signin
-    @user = current_user
+    @user = User.new
   end
 end

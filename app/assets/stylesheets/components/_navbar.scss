@@ -82,6 +82,7 @@ nav ul > li > a:hover::before {
   color: #D6D5C1;
   align-items: center;
   color: $whetstone;
+  align-items: center;
   float: right;
   margin-right: 50px;
   text-decoration: none;
@@ -116,7 +117,6 @@ display: flex;
 filter: invert(0.25);
 
 }
-
 
 .btn-sign-in {
   width: 100px;
